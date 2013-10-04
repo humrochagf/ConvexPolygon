@@ -68,6 +68,7 @@ class Polygon:
     """Class Polygon"""
     def __init__(self, *vert):
         self.vertices = list(vert)
+        self.__min_max_slice()
 
     def __min_max_slice(self):
         """Divide the polygon into left and right according
@@ -163,7 +164,6 @@ class Polygon:
         """Find out if the point is in the polygon"""
 
         self.__in_line = False
-        self.__min_max_slice()
 
         if (self.__right_test(point, self.right_slice) and 
             self.__left_test(point, self.left_slice)):
